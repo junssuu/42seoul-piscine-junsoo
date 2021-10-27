@@ -1,0 +1,20 @@
+#ifndef FT_ABS_H
+#define FT_ABS_H
+
+#define ABS(Value) ((Value < 0) ? (-Value) : (Value))
+
+#endif
+
+------------------
+
+main.c
+
+#include "ft_abs.h"
+#include <stdio.h>
+
+intmain(void)
+{
+intValue = -1234;
+int a = ABS(Value);
+printf("a[%d]\n",a);
+}
