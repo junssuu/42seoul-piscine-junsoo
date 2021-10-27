@@ -2,33 +2,33 @@
 #include <unistd.h>
 #include "ft_stock_str.h"
 
-voidft_size(int size)
+void  ft_size(int size)
 {
-charc;
+  char  c;
 
-if (!size)
-return ;
-c = size % 10 + '0';
-ft_size(size / 10);
-write(1, &c, 1);
+  if (!size)
+    return ;
+  c = size % 10 + '0';
+  ft_size(size / 10);
+  write(1, &c, 1);
 }
 
-voidft_show_tab(struct s_stock_str *par)
+void  ft_show_tab(struct s_stock_str *par)
 {
-inti;
+  int i;
 
-i = 0;
+  i = 0;
 while (par[i].str)
 {
-write(1, par[i].str, par[i].size);
-write(1, "\n", 1);
-if (par[i].size)
-ft_size(par[i].size);
-else
-write(1, "0", 1);
-write(1, "\n", 1);
-write(1, par[i].copy, par[i].size);
-write(1, "\n", 1);
-i++;
+  write(1, par[i].str, par[i].size);
+  write(1, "\n", 1);
+  if (par[i].size)
+    ft_size(par[i].size);
+  else
+    write(1, "0", 1);
+  write(1, "\n", 1);
+  write(1, par[i].copy, par[i].size);
+  write(1, "\n", 1);
+  i++;
 }
 }
