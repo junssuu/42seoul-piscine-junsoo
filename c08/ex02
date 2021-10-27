@@ -12,9 +12,9 @@ main.c
 #include "ft_abs.h"
 #include <stdio.h>
 
-intmain(void)
+int main(void)
 {
-intValue = -1234;
-int a = ABS(Value);
-printf("a[%d]\n",a);
+  intValue = -1234;
+  int a = ABS(Value);
+  printf("a[%d]\n",a);
 }
