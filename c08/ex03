@@ -1,0 +1,30 @@
+#ifndef FT_POINT_H
+#define FT_POINT_H
+
+typedef structs_point
+{
+intx;
+inty;
+}t_point;
+
+#endif
+
+---------------------
+
+main.c
+
+#include "ft_point.h"
+
+voidset_point(t_point *point)
+{
+point->x = 42;
+point->y = 21;
+}
+
+intmain(void)
+{
+t_pointpoint;
+
+set_point(&point);
+return (0);
+}
