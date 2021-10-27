@@ -1,0 +1,87 @@
+ft_stock_str.h
+
+#ifndef FT_STOCK_STR_H
+#define FT_STOCK_STR_H
+
+typedef structs_stock_str
+{
+intsize;
+char*str;
+char*copy;
+}t_stock_str;
+
+#endif
+
+------------------------------
+ft_strs_to_tab.c
+
+#include "ft_stock_str.h"
+#include <stdlib.h>
+
+intstr_size(char *str)
+{
+inti;
+
+i = 0;
+while (str[i] != '\0')
+i++;
+return (i);
+}
+
+voidstr_cpy(char *dest, char *src)
+{
+inti;
+while (*src)
+*(dest)++ = *(src)++;
+*dest = 0;
+}
+
+struct s_stock_str*ft_strs_to_tab(int ac, char **av)
+{
+t_stock_str*res;
+inti;
+
+i = 0;
+res = (t_stock_str *)malloc(sizeof(t_stock_str) * (ac + 1));
+if (!res)
+return (NULL);
+while (i < ac)
+{
+res[i].size = str_size(av[i]);
+res[i].str = (char *)malloc(res[i].size + 1);
+res[i].copy = (char *)malloc(res[i].size + 1);
+str_cpy(res[i].str, av[i]);
+str_cpy(res[i].copy, av[i]);
+++i;
+}
+res[i].str = 0;
+return (res);
+}
+
+--------------------------------
+main.c
+
+#include <stdio.h>
+#include "ft_strs_to_tab.c"
+
+struct s_stock_str*ft_strs_to_tab(int ac, char **av);
+voidft_show_tab(struct s_stock_str *par);
+
+intmain(void)
+{
+char*strs[100];
+char*str1;
+char*str2;
+char*str3;
+intsize;
+
+str1 = "hello";
+str2 = " world";
+str3 = "!";
+size = 3;
+
+strs[0] = str1;
+strs[1] = str2;
+strs[2] = str3;
+ft_show_tab(ft_strs_to_tab(size, strs));
+}
