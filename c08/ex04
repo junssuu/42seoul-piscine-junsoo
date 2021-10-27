@@ -48,7 +48,7 @@ struct s_stock_str* ft_strs_to_tab(int ac, char **av)
   while (i < ac)
   {
     res[i].size = str_size(av[i]);
-    res[i].str = (char *)malloc(res[i].size + 1);
+    res[i].str = av[i];
     res[i].copy = (char *)malloc(res[i].size + 1);
     str_cpy(res[i].str, av[i]);
     str_cpy(res[i].copy, av[i]);
